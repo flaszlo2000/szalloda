@@ -1,1 +1,37 @@
-<p>navtabs works!</p>
+<div>
+    <nav mat-tab-nav-bar>
+
+        <div>
+            <a mat-tab-link routerLink="/home"
+                routerLinkActive #home="routerLinkActive"
+                [active]="home.isActive">
+                Home
+            </a>
+    
+            <a mat-tab-link routerLink="/szobak"
+                routerLinkActive #szobak="routerLinkActive"
+                [active]="szobak.isActive">
+                Szobáink
+            </a>
+    
+            <a mat-tab-link routerLink="/etkezes"
+                routerLinkActive #etkezes="routerLinkActive"
+                [active]="etkezes.isActive">
+                Étkezés
+            </a>
+    
+            <a mat-tab-link routerLink="/szolgaltatasok"
+                routerLinkActive #foglalas="routerLinkActive"
+                [active]="foglalas.isActive">
+                Szolgáltatások
+            </a>
+            
+            <a mat-tab-link routerLink="/foglalas"
+                routerLinkActive #foglalas="routerLinkActive"
+                [active]="foglalas.isActive">
+                Foglalás
+            </a>
+        </div>
+
+    </nav>
+</div>

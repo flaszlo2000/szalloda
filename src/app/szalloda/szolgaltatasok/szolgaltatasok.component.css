@@ -1,0 +1,37 @@
+.container {
+    background: url(/assets/képek/kapcsolatok.jpg) no-repeat center center ;
+    background-size: cover;
+}
+
+.headeralign {
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+}
+
+.szolgaltatasok {
+    color:#000;
+    font-weight: 380;
+    font-size: 35px;
+    margin: 10px;
+    padding: 0px 20px 20px 20px;
+}
+
+.picture {
+    width: 100%;
+    max-height: auto;
+}
+
+.obj-container {
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.center {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 10px;
+    text-align: center;
+}
