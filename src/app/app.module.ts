@@ -29,6 +29,8 @@ import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SzobakComponent } from './szalloda/szobak/szobak.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { SzobakComponent } from './szalloda/szobak/szobak.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

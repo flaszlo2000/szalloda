@@ -1,1 +1,34 @@
-<p>foglalas works!</p>
+<div class="middle">
+    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+        <div class="center">
+            <input type="text" name="vezetekNev" ngModel placeholder="Vezetéknév"> <br> <br>
+            <input type="text" name="keresztNev" ngModel placeholder="Keresztnév"> <br> <br>
+            <label for="Születési dátum">Születési dátum:</label> <br>
+            <input type="date" name="szuletesiDatum" ngModel> <br> <br>
+            <input type="email" name="email" ngModel placeholder="E-mail"> <br> <br>
+            <input type="text" name="azonosito" ngModel placeholder="Személyi azonosító"> <br> <br>
+            <input type="text" name="nem" ngModel placeholder="Nem"> <br> <br>
+            <input type="text" name="varos" ngModel placeholder="Város"> <br> <br>
+            <input type="text" name="utca" ngModel placeholder="Utca"> <br> <br>
+            <input type="number" name="hazszam" ngModel placeholder="Házszám"> <br> <br>
+        </div>
+        <div class="center">
+            <label for="mettol">Mettől: </label><br>
+            <input type="date" name="mettol" ngModel><br><br>
+            <label for="meddig">Meddig: </label><br>
+            <input type="date" name="meddig" ngModel><br><br>
+            <input type="number" name="fo" ngModel placeholder="Hány főre"><br><br>
+            <label for="szobatipus">Válasszon szobát</label><br>
+            <select id="szobatipus" name="szobatipus">
+                <option value="Standard szoba">Standard szoba</option>
+                <option value="Deluxe szoba">Deluxe szoba</option>
+                <option value="Executive szoba">Executive szoba</option>
+                <option value="Junior lakosztály">Junior lakosztály</option>
+                <option value="Lakosztály">Lakosztály</option>
+            </select>
+        </div>
+        <div class="center">
+            <button type="submit">Elküld</button>
+        </div>
+    </form>
+</div>
