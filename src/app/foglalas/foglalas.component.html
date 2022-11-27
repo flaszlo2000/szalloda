@@ -72,12 +72,10 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Szobatípus</mat-label>
-                <mat-select [(ngModel)]="second_data.szobatipus">
-                    <mat-option value="primary" >Standard szoba</mat-option>
-                    <mat-option value="primary">Deluxe szoba</mat-option>
-                    <mat-option value="primary">Executive szoba</mat-option>
-                    <mat-option value="primary">Junior lakosztály</mat-option>
-                    <mat-option value="primary">Lakosztály</mat-option>
+                <mat-select (selectionChange)="second_data.szobatipus = $event.value">
+                    <mat-option *ngFor="let room_type of szobatipus | async" [value]="room_type.value">
+                        {{room_type.value}}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>

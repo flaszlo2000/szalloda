@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {FormBuilder, Validators} from '@angular/forms';
 import { FoglalasModel, FoglalasReszletModel } from '../models/foglalas.model';
+import { SzobatipusService } from '../services/szobatipus.service';
+import { Observable } from 'rxjs';
+import { RoomType } from '../models/szoba_tipus.model';
 
 
 @Component({
@@ -37,8 +40,15 @@ export class FoglalasComponent implements OnInit {
   });
   isEditable = false;
 
-  constructor(private _formBuilder: FormBuilder, private http:HttpClient) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private http:HttpClient,
+    private room_type_service: SzobatipusService
+  ) { }
 
+  public get szobatipus(): Observable<Array<RoomType>> {
+    return this.room_type_service.getAllRoomType();
+  }
 
   onSubmit(data: any) {
     console.warn(data);
