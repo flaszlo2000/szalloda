@@ -32,6 +32,7 @@ import { SzobakComponent } from './szalloda/szobak/szobak.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SzobatipusService } from './services/szobatipus.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SzobatipusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
