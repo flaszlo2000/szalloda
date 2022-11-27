@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SzobatipusService } from './services/szobatipus.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { SzobatipusService } from './services/szobatipus.service';
     JuniorComponent,
     LakosztalyComponent,
     SidenavListComponent,
-    SzobakComponent
+    SzobakComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
