@@ -1,35 +1,35 @@
 <mat-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-      <form [formGroup]="firstFormGroup" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+      <form [formGroup]="firstFormGroup" #userPost="ngForm" (ngSubmit)="onSubmit(first_data)">
         <ng-template matStepLabel>Alap adatok</ng-template>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Személyi igazolvány szám</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Személyi igazolvány szám" required>
+                <input [(ngModel)]="first_data.szemelyi" matInput formControlName="firstCtrl" placeholder="Személyi igazolvány szám" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Vezetéknév</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Vezetéknév" required>
+                <input [(ngModel)]="first_data.vezeteknev" matInput formControlName="firstCtrl" placeholder="Vezetéknév" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Keresztnév</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Keresztnév" required>
+                <input [(ngModel)]="first_data.keresztnev" matInput formControlName="firstCtrl" placeholder="Keresztnév" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Nem</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Nem" required>
+                <input [(ngModel)]="first_data.nem" matInput formControlName="firstCtrl" placeholder="Nem" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Születési dátum</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="firstCtrl" required>
+                <input [(ngModel)]="first_data.szul_datun" matInput [matDatepicker]="picker" formControlName="firstCtrl" required>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
@@ -38,25 +38,25 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Település</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Település" required>
+                <input [(ngModel)]="first_data.telepules" matInput formControlName="firstCtrl" placeholder="Település" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Utca</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Utca" required>
+                <input [(ngModel)]="first_data.utca" matInput formControlName="firstCtrl" placeholder="Utca" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Házszám</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="Házszám" required>
+                <input [(ngModel)]="first_data.hazszam" matInput formControlName="firstCtrl" placeholder="Házszám" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>E-mail</mat-label>
-                <input matInput formControlName="firstCtrl" placeholder="E-mail" required>
+                <input [(ngModel)]="first_data.email" matInput formControlName="firstCtrl" placeholder="E-mail" required>
             </mat-form-field>
         </div>
         <div>
@@ -64,13 +64,15 @@
         </div>
       </form>
     </mat-step>
+
+
     <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-      <form [formGroup]="secondFormGroup" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+      <form [formGroup]="secondFormGroup" #userPost="ngForm" (ngSubmit)="onSubmit(second_data)">
         <ng-template matStepLabel>Foglalás részletei</ng-template>
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Szobatípus</mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="second_data.szobatipus">
                     <mat-option value="primary" >Standard szoba</mat-option>
                     <mat-option value="primary">Deluxe szoba</mat-option>
                     <mat-option value="primary">Executive szoba</mat-option>
@@ -82,7 +84,7 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Érkezés</mat-label>
-                <input matInput [matDatepicker]="picker1" formControlName="secondCtrl" required>
+                <input [(ngModel)]="second_data.erkezes" matInput [matDatepicker]="picker1" formControlName="secondCtrl" required>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
@@ -91,7 +93,7 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Távozás</mat-label>
-                <input matInput [matDatepicker]="picker2"  formControlName="secondCtrl" required>
+                <input [(ngModel)]="second_data.tavozas" matInput [matDatepicker]="picker2"  formControlName="secondCtrl" required>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
@@ -100,7 +102,7 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Hány főre</mat-label>
-                <input type="number"matInput formControlName="secondCtrl" placeholder="Szobatípus"required>
+                <input [(ngModel)]="second_data.foszam" type="number"matInput formControlName="secondCtrl" placeholder="Szobatípus"required>
             </mat-form-field>
         </div>
             <div>
