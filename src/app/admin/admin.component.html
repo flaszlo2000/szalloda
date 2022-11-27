@@ -1,10 +1,55 @@
-<div id="container">
-    <div *ngFor="let reservation of allReservations | async">
-        {{reservation.email}}
-
-        <!-- pls az id -t ne plot -old -->
-        <button mat-icon-button (click)="deleteReservation(reservation.id)">
-            <mat-icon>delete</mat-icon>
-        </button>
-    </div>
+<div class="center">
+    <h1>Rezervációk</h1>
+</div>
+<div class="padding">
+    <table>
+        <div id="container">
+            <thead>
+                <tr>
+                    <th>E-mail</th>
+                    <th>Érkezés</th>
+                    <th>Távozás</th>
+                    <th>Fő-szám</th>
+                    <th>Vezetéknév</th>
+                    <th>Keresztnév</th>
+                    <th>szobatipus</th>
+                    <th>Születési Dátum</th>
+                    <th>Település</th>
+                    <th>Utca</th>
+                    <th>Házszám</th>
+                    <th>Személyi igazolvány szám</th>
+                    <th>Nem</th>
+                    <th>Törlés</th>
+                    <th>Szerkesztés</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let reservation of allReservations | async">
+                    <td>{{reservation.email}}</td>
+                    <td>{{reservation.erkezes}}</td>
+                    <td>{{reservation.tavozas}}</td>
+                    <td>{{reservation.foszam}}</td>
+                    <td>{{reservation.vezeteknev}}</td>
+                    <td>{{reservation.keresztnev}}</td>
+                    <td>{{reservation.szobatipus}}</td>
+                    <td>{{reservation.szul_datun}}</td>
+                    <td>{{reservation.telepules}}</td>
+                    <td>{{reservation.utca}}</td>
+                    <td>{{reservation.hazszam}}</td>
+                    <td>{{reservation.szemelyi}}</td>
+                    <td>{{reservation.nem}}</td>
+                    <td>
+                        <button mat-icon-button (click)="deleteReservation(reservation.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                    <td>
+                        <button mat-icon-button (click)="deleteReservation(reservation.id)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
 </div>
