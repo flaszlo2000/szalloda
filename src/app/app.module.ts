@@ -34,6 +34,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SzobatipusService } from './services/szobatipus.service';
 import { AdminComponent } from './admin/admin.component';
+import { ReservationDataLineComponent } from './admin/reservation-data-line/reservation-data-line.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AdminComponent } from './admin/admin.component';
     LakosztalyComponent,
     SidenavListComponent,
     SzobakComponent,
-    AdminComponent
+    AdminComponent,
+    ReservationDataLineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,82 @@
+<div class="content">
+  <form *ngIf="!!inner_reservation">
+    <mat-form-field>
+      <mat-label>Személyi</mat-label>
+      <input type="text" matInput placeholder="szemelyi" [value]="inner_reservation.szemelyi" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Vezetéknév</mat-label>
+      <input type="text" matInput placeholder="János" [value]="inner_reservation.vezeteknev" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Keresztnév</mat-label>
+      <input type="text" matInput placeholder="Tamás" [value]="inner_reservation.keresztnev" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nem</mat-label>
+      <input type="text" matInput placeholder="Nő" [value]="inner_reservation.nem" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Születési dátum</mat-label>
+      <input type="text" matInput placeholder="1848.13.32" [value]="inner_reservation.szul_datun" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Település</mat-label>
+      <input type="text" matInput placeholder="Kiskunhalas" [value]="inner_reservation.telepules" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Utca</mat-label>
+      <input type="text" matInput placeholder="Tamás János utca" [value]="inner_reservation.utca" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Házszám</mat-label>
+      <input type="text" matInput placeholder="12/a" [value]="inner_reservation.hazszam" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>e-mail</mat-label>
+      <input type="email" matInput placeholder="pat@example.com" [value]="inner_reservation.email" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Szobatípus</mat-label>
+      <input type="text" matInput placeholder="kicsi" [value]="inner_reservation.szobatipus" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Érkezés</mat-label>
+      <input type="text" matInput placeholder="valamikor" [value]="inner_reservation.erkezes" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Távozás</mat-label>
+      <input type="text" matInput placeholder="valamikor" [value]="inner_reservation.tavozas" [disabled]="!edit">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Főszám</mat-label>
+      <input type="number" matInput placeholder="2" [value]="inner_reservation.foszam" [disabled]="!edit">
+    </mat-form-field>
+    
+  </form>
+  
+  <div>
+    <button mat-raised-button *ngIf="edit" color="primary" (click)="updateReservation()">Mentés</button>
+  </div>
+
+  <div class="button-group">
+    <button mat-icon-button class="expansion-button" color="primary" (click)="edit = !edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button class="expansion-button" color="accent" (click)="deleteReservation()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

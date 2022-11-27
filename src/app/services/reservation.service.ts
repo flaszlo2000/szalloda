@@ -54,4 +54,8 @@ export class ReservationService {
   public deleteReservation(reservation_id: Number): void {
     console.log(reservation_id);
   }
+
+  public updateReservation(reservation: FullReservation): void {
+    console.log("update");
+  }
 }

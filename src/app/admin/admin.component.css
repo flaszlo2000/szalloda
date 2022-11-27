@@ -11,3 +11,12 @@ table, th, td {
     text-align: center;
     padding-top: 3%;
 }
+
+mat-panel-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expansion-button {
+    float: right
+}

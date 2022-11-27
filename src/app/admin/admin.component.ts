@@ -1,8 +1,8 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FullReservation } from '../models/foglalas.model';
 import { ReservationService } from '../services/reservation.service';
+import { map } from "rxjs";
 
 @Component({
   selector: 'app-admin',
@@ -14,7 +14,16 @@ export class AdminComponent implements OnInit {
   constructor(private reservation_service: ReservationService) { }
 
   public get allReservations(): Observable<Array<FullReservation>> {
-    return this.reservation_service.getAllReservations();
+    return this.reservation_service.getAllReservations().pipe(
+      map(inner_array => {
+        // nasty hack to be able to add edit field
+        inner_array.forEach(value => {
+          value.edit = false;
+        });
+
+        return inner_array;
+      })
+    );
   }
 
   public deleteReservation(reservation_id: Number): void {
@@ -22,5 +31,9 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public toggleReservationEdit(reservation: FullReservation): void {
+    reservation.edit = !reservation.edit;
   }
 }

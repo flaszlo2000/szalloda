@@ -19,4 +19,5 @@ export interface FoglalasReszletModel {
 
 export interface FullReservation extends FoglalasModel, FoglalasReszletModel {
     id: Number;
+    edit?: Boolean;
 }
