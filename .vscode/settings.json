@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        ".vscode": true,
+        "package*.json": true,
+        "**/*.spec.ts": true,
+        "src/assets": true,
+        "src/environments": true,
+    },
+}
