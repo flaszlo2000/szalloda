@@ -16,3 +16,7 @@ export interface FoglalasReszletModel {
     tavozas: String;
     foszam: Number;
 }
+
+export interface FullReservation extends FoglalasModel, FoglalasReszletModel {
+    id: Number;
+}

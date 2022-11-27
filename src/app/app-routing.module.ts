@@ -13,6 +13,7 @@ import { ExecutiveComponent } from './szalloda/szobak/executive/executive.compon
 import { JuniorComponent } from './szalloda/szobak/junior/junior.component';
 import { LakosztalyComponent } from './szalloda/szobak/lakosztaly/lakosztaly.component';
 import { SzobakComponent } from './szalloda/szobak/szobak.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,7 +29,10 @@ const routes: Routes = [
   { path: 'szobak/junior', component: JuniorComponent },
   { path: 'szobak/lakosztaly', component: LakosztalyComponent },
   { path: 'szobak', component: SzobakComponent },
-
+  {
+    "path": "admin",
+    "component": AdminComponent
+  }
 ];
 
 @NgModule({

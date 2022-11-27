@@ -1,0 +1,10 @@
+<div id="container">
+    <div *ngFor="let reservation of allReservations | async">
+        {{reservation.email}}
+
+        <!-- pls az id -t ne plot -old -->
+        <button mat-icon-button (click)="deleteReservation(reservation.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>
