@@ -10,20 +10,10 @@ import { map } from "rxjs";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  public all_reservations?: Observable<Array<FullReservation>>;
 
-  constructor(private reservation_service: ReservationService) { }
-
-  public get allReservations(): Observable<Array<FullReservation>> {
-    return this.reservation_service.getAllReservations().pipe(
-      map(inner_array => {
-        // nasty hack to be able to add edit field
-        inner_array.forEach(value => {
-          value.edit = false;
-        });
-
-        return inner_array;
-      })
-    );
+  constructor(private reservation_service: ReservationService) {
+    this.all_reservations = this.reservation_service.getAllReservations();
   }
 
   public deleteReservation(reservation_id: Number): void {

@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SzobatipusService } from './services/szobatipus.service';
 import { AdminComponent } from './admin/admin.component';
 import { ReservationDataLineComponent } from './admin/reservation-data-line/reservation-data-line.component';
+import { ReservationService } from './services/reservation.service';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,7 @@ import { ReservationDataLineComponent } from './admin/reservation-data-line/rese
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [SzobatipusService],
+  providers: [SzobatipusService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

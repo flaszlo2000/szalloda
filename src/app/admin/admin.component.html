@@ -3,7 +3,7 @@
 </div>
 <div class="padding">
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let reservation of allReservations | async">
+        <mat-expansion-panel *ngFor="let reservation of all_reservations | async">
             <mat-expansion-panel-header>
                 <b>{{reservation.szobatipus}}</b>: {{reservation.erkezes}} -> {{reservation.tavozas}}
             </mat-expansion-panel-header>
